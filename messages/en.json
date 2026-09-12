@@ -1,0 +1,13 @@
+{
+  "Nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About me"
+  },
+  "Hero": {
+    "title": "Portfolio",
+    "subtitle": "Software Engineer & Designer"
+  }
+}
+
+

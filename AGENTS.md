@@ -18,17 +18,19 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
   - Tworzymy go wyłącznie w subtelnym **odcieniu szarości / neutralnym** (np. `neutral-100`, `neutral-900/5`), a **nigdy** jako kolorowy boks.
 - **Styl ogólny**: Duża, wyrazista typografia i zdjęcia / grafiki, mało zbędnego tekstu.
 
-## 2. Kolory (Tylko Customowe Zmienne)
+## 2. Kolory (Tylko Customowe Zmienne i Zasada 60-30-10)
 - **NIGDY nie używaj domyślnych kolorów Tailwind** (np. `blue-500`, `emerald-600`, `amber-400` itd.).
 - Zawsze korzystaj wyłącznie ze zdefiniowanych zmiennych motywu:
-  - `text` (`--color-text`) -> `text-text`, `bg-text`, `border-text`
-  - `background` (`--color-background`) -> `text-background`, `bg-background`
-  - `primary` (`--color-primary`) -> akcent / kluczowe akcje
-  - `secondary` (`--color-secondary`)
-  - `accent` (`--color-accent`)
-- **Akcent / Żółty (`primary` / `accent`)**:
-  - Używamy **tylko okazjonalnie / punktowo** jako rzadki akcent.
-  - Zdecydowaną większość interfejsu budujemy wyłącznie odcieniami bieli, czerni i neutralnych szarości.
+  - `background` (`--color-background: #ffffff`): Czysta biel
+  - `text` (`--color-text: #000000`): Czysta czerń
+  - `primary` (`--color-primary: #f0cb24`): Brandowy żółty (Bright Amber)
+  - `accent` (`--color-accent: #ff6940`): Akcentowy pomarańczowy / koralowy (Tomato)
+  - `secondary` (`--color-secondary: #f5f5f5`): Subtelny neutralny podkład
+- **Zasada Proporcji Kolorów 60 / 30 / 10**:
+  - **60% — Kolory neutralne**: Baza interfejsu (biel `background`, czerń `text`, bardzo delikatne szarości `secondary` / `neutral-100`).
+  - **30% — Kolor brandu (żółty `#f0cb24`)**: Drugi dominujący kolor witryny (aktywne elementy, kluczowe tła sekcji, wyraziste bloki brandowe).
+  - **10% — Akcent (pomarańczowy `#ff6940`)**: Rzadki, punktowy kolor akcji/uwagi (kluczowe CTA, wyraziste detale, badge, mikro-wyróżnienia).
+
 
 ## 3. Typografia & Fonty (Tylko Customowe Zmienne)
 - Fonty i hierarchia stylów są zdefiniowane ogólnymi, elastycznymi nazwami zmiennych (umożliwiającymi łatwą podmianę kroju bez zmian w kodzie komponentów):
@@ -74,10 +76,11 @@ AI ma tendencję do generowania powtarzalnych, "generycznych" stron. **Bezwzglę
 
 ## 7. Świadomy UX, Architektura Informacji i Flow Użytkownika
 Projektując interfejs, traktuj UX na równi z inżynierią i estetyką:
-- **Kierowanie wzrokiem (Eye Guidance & Visual Hierarchy)**:
-  - Użytkownicy nie czytają strony słowo po słowie – skanują ją wzrokiem według naturalnych schematów (np. Z-pattern dla landing page / hero, F-pattern dla list i opisów).
-  - Skupiaj uwagę na jednym kluczowym elemencie na raz (Anchor Point) – poprzez wyrazisty kontrast skali fontu (`h1` vs tekst pomocniczy) lub punktowy akcent.
-  - Zachowaj logiczny rytm czytania: Tytuł -> Krótka wartość / kontekst -> Konkretne działanie (CTA).
+- **Prymat Visual Hierarchy nad sztywnymi "patternami"**:
+  - Sztywne schematy typu "F-pattern" czy "Z-pattern" to w nowoczesnym web designie przestarzały mit — użytkownik podąża dokładnie za tym, co zaprojektujesz hierarchią wizualną, a nie za sztuczną literą alfabetu.
+  - To **kontrast skali, światło (whitespace), waga typografii i strategiczne akcenty** decydują o kolejności odbioru. Jeśli chcesz, by użytkownik zaczął od środka, góry czy boku — zaprojektuj tam bezdyskusyjny punkt kotwiczenia uwagi (Anchor Point).
+  - Zachowaj logiczny flow: Wyrazisty punkt wejścia -> Zrozumiały kontekst / wartość -> Konkretne działanie (CTA).
+
 - **Redukcja obciążenia poznawczego (Cognitive Load)**:
   - Jedna sekcja = jedna główna myśl lub zadanie.
   - Odpowiedni oddech (`padding`, `gap`, duży whitespace) daje oczom odpocząć i naturalnie grupuje powiązane treści (prawo bliskości Gestalt).

@@ -4,12 +4,12 @@ export default function BalticWaves() {
   return (
     <div
       aria-hidden="true"
-      className="absolute bottom-0 right-0 w-full h-[50%] sm:h-[60%] md:h-[70%] pointer-events-none select-none overflow-hidden"
+      className="absolute bottom-0 right-0 w-full h-[45%] sm:h-[55%] md:h-[65%] lg:h-[70%] pointer-events-none select-none overflow-hidden"
     >
       <svg
         viewBox="0 0 1440 450"
         fill="none"
-        preserveAspectRatio="none"
+        preserveAspectRatio="xMidYMid slice"
         shapeRendering="geometricPrecision"
         className="w-full h-full"
       >
@@ -136,8 +136,8 @@ export default function BalticWaves() {
         </g>
       </svg>
 
-      {/* Maska wygaszająca po lewej stronie - 100% czysta biel pod typografią Hero */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 via-25% to-transparent pointer-events-none" />
+      {/* Maska wygaszająca: od góry na mobile, od lewej na desktopie pod typografią Hero */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 via-15% to-transparent sm:bg-gradient-to-r sm:from-background sm:via-background/85 sm:via-25% sm:to-transparent pointer-events-none" />
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function ContactSection() {
                     </span>
                     <a
                       href="mailto:lukas.kostyk@gmail.com"
-                      className="text-base font-semibold text-accent hover:underline underline-offset-4 cursor-pointer transition-colors"
+                      className="text-base font-medium text-accent hover:underline underline-offset-4 cursor-pointer transition-colors"
                     >
                       lukas.kostyk@gmail.com
                     </a>
@@ -52,7 +52,7 @@ export default function ContactSection() {
                     <span className="block text-xs font-mono uppercase text-text/50">
                       {t("locationLabel")}
                     </span>
-                    <span className="text-base font-medium text-text">
+                    <span className="text-base font-normal text-text">
                       {t("locationValue")}
                     </span>
                   </div>
@@ -66,7 +66,7 @@ export default function ContactSection() {
             <ScrollReveal variant="zoom-in" delay={100} duration={500}>
               {submitted ? (
                 <div className="p-8 bg-background rounded-sm border border-text/10 space-y-2">
-                  <h3 className="text-xl font-bold font-header text-text">
+                  <h3 className="text-xl font-medium font-header text-text">
                     Dziękuję za wiadomość!
                   </h3>
                   <p className="text-sm text-neutral-600">

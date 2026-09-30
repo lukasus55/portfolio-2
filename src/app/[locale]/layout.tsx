@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Rubik } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,17 +8,18 @@ import { routing } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
 import "../globals.css";
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-body",
   subsets: ["latin", "latin-ext"],
-  weight: ["400"],
+  display: "swap",
 });
 
-const rubik = Rubik({
+const headerFont = Plus_Jakarta_Sans({
   variable: "--font-header",
   subsets: ["latin", "latin-ext"],
-  weight: ["700"],
+  display: "swap",
 });
+
 
 
 export const metadata: Metadata = {
@@ -47,7 +48,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${rubik.variable} h-full antialiased`}>
+    <html lang={locale} className={`${plusJakarta.variable} ${headerFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-text selection:bg-neutral-900 selection:text-neutral-50">
         <NextIntlClientProvider messages={messages}>
           <Navbar />

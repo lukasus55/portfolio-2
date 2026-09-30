@@ -63,7 +63,7 @@ export default function ProjectsSection() {
                 delay={pIdx * 80}
               >
                 <div className="space-y-2">
-                  <h3 className="text-2xl md:text-3xl font-bold font-header text-text">
+                  <h3 className="text-2xl md:text-3xl font-medium font-header text-text">
                     {t(project.nameKey)}
                   </h3>
                   <p className="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">

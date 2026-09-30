@@ -182,7 +182,7 @@ export default function SkillsSection() {
                 <div className="flex items-center justify-center">
                   {skill.icon}
                 </div>
-                <span className="text-xs sm:text-sm font-medium text-text/80">
+                <span className="text-xs sm:text-sm font-normal text-text/80">
                   {skill.name}
                 </span>
               </div>

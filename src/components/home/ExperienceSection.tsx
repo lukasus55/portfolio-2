@@ -55,10 +55,10 @@ export default function ExperienceSection() {
 
                 {/* Informacje o stanowisku */}
                 <div className="space-y-1">
-                  <h3 className="text-xl md:text-2xl font-bold font-header text-white">
+                  <h3 className="text-xl md:text-2xl font-medium font-header text-white">
                     {t(`${job.key}.title`)}
                   </h3>
-                  <p className="text-sm md:text-base font-semibold text-white/95">
+                  <p className="text-sm md:text-base font-medium text-white/95">
                     {t(`${job.key}.company`)}
                   </p>
                   <p className="text-xs md:text-sm font-mono text-white/80">

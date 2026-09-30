@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="max-w-6xl mx-auto w-full px-6 py-12 md:py-20 relative z-10">
         <div className="space-y-8 max-w-5xl">
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[4.85rem] font-bold tracking-tight text-text leading-[1.08]">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[4.85rem] font-medium tracking-tight text-text leading-[1.08]">
               {t("greeting")}{" "}
               <span className="text-text whitespace-nowrap">{t("name")}</span>
             </h1>
@@ -37,7 +37,7 @@ export default function HeroSection() {
               <Button
                 variant="accent"
                 size="lg"
-                className="text-white font-semibold shadow-xs"
+                className="text-white font-medium shadow-xs"
               >
                 {t("cta")}
               </Button>

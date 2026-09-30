@@ -21,10 +21,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-neutral-800">
           {/* Identity & Bio */}
           <div className="lg:col-span-4 space-y-3">
-            <span className="font-header text-xl md:text-2xl font-bold tracking-tight text-white block">
+            <span className="font-header text-xl md:text-2xl font-medium tracking-tight text-white block">
               Łukasz Kostyk
             </span>
-            <span className="text-sm font-semibold text-accent block">
+            <span className="text-sm font-medium text-accent block">
               {t("role")}
             </span>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Sitemap Navigation */}
           <div className="lg:col-span-3 space-y-3">
-            <p className="font-header text-xs uppercase tracking-wider font-semibold text-neutral-300">
+            <p className="font-header text-xs uppercase tracking-wider font-medium text-neutral-300">
               {t("navTitle")}
             </p>
             <ul className="space-y-2 text-sm text-neutral-400">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Expertise */}
           <div className="lg:col-span-3 space-y-3">
-            <p className="font-header text-xs uppercase tracking-wider font-semibold text-neutral-300">
+            <p className="font-header text-xs uppercase tracking-wider font-medium text-neutral-300">
               {t("expertiseTitle")}
             </p>
             <ul className="space-y-2 text-sm text-neutral-400">
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div className="lg:col-span-2 space-y-3">
-            <p className="font-header text-xs uppercase tracking-wider font-semibold text-neutral-300">
+            <p className="font-header text-xs uppercase tracking-wider font-medium text-neutral-300">
               {t("connectTitle")}
             </p>
             <ul className="space-y-2.5 text-sm text-neutral-400">
@@ -116,7 +116,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-400">
           <span>
             &copy; {new Date().getFullYear()}{" "}
-            <span className="text-accent font-semibold">Łukasz Kostyk</span>. {t("rights")}.
+            <span className="text-accent font-medium">Łukasz Kostyk</span>. {t("rights")}.
           </span>
         </div>
       </div>

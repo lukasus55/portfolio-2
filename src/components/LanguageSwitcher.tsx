@@ -54,7 +54,7 @@ export default function LanguageSwitcher() {
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        className="flex items-center gap-2 px-3 h-9 rounded-sm hover:bg-neutral-100 hover:text-accent transition-colors cursor-pointer text-xs font-semibold focus-visible:outline-2 focus-visible:outline-accent"
+        className="flex items-center gap-2 px-3 h-9 rounded-sm hover:bg-neutral-100 hover:text-accent transition-colors cursor-pointer text-xs font-medium focus-visible:outline-2 focus-visible:outline-accent"
       >
         <Image
           src={currentLanguage.flag}
@@ -63,7 +63,7 @@ export default function LanguageSwitcher() {
           height={14}
           className="rounded-[1px] object-cover shadow-xs"
         />
-        <span className="uppercase text-xs font-semibold tracking-wider">
+        <span className="uppercase text-xs font-medium tracking-wider">
           {currentLanguage.code}
         </span>
         <ChevronDown
@@ -87,7 +87,7 @@ export default function LanguageSwitcher() {
                   onClick={() => handleSelect(lang.code)}
                   className={`w-full flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-left transition-colors cursor-pointer ${
                     isSelected
-                      ? "bg-neutral-100 font-semibold text-accent"
+                      ? "bg-neutral-100 font-medium text-accent"
                       : "text-text/75 hover:bg-neutral-50 hover:text-accent"
                   }`}
                 >

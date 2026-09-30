@@ -30,7 +30,7 @@ const variantStyles: Record<ButtonVariant, string> = {
 const sizeStyles: Record<ButtonSize, string> = {
   sm: "px-3 py-1.5 text-xs font-medium",
   md: "px-5 py-2.5 text-sm font-medium",
-  lg: "px-7 py-3.5 text-base font-semibold",
+  lg: "px-7 py-3.5 text-base font-medium",
 };
 
 // Kolory fali morskiego przypływu w zależności od wariantu przycisku

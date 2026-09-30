@@ -49,7 +49,7 @@ export default function Navbar() {
                 className="object-cover"
               />
             </div>
-            <span className="font-header text-base tracking-tight font-bold text-text group-hover:text-accent transition-colors">
+            <span className="font-header text-base tracking-tight font-medium text-text group-hover:text-accent transition-colors">
               Łukasz Kostyk
             </span>
           </a>

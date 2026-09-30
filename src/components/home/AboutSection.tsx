@@ -7,7 +7,17 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="w-full bg-accent text-white overflow-hidden relative">
-
+      {/* Dynamiczny skos wejściowy z sekcji Projects (biel -> pomarańcz) */}
+      <div className="w-full overflow-hidden leading-none" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 48"
+          fill="none"
+          preserveAspectRatio="none"
+          className="w-full h-6 sm:h-9 md:h-12 block"
+        >
+          <path d="M0 0H1440L0 48Z" className="fill-background" />
+        </svg>
+      </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-16">
         <ScrollReveal variant="fade-up" duration={400}>

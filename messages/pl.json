@@ -2,12 +2,84 @@
   "Nav": {
     "experience": "Doświadczenie",
     "projects": "Projekty",
-    "about": "O mnie"
+    "skills": "Umiejętności",
+    "about": "O mnie",
+    "contact": "Kontakt"
   },
   "Hero": {
-    "title": "Portfolio",
-    "subtitle": "Software Engineer & Designer"
+    "greeting": "Cześć, jestem",
+    "name": "Łukasz Kostyk",
+    "role": "Fullstack developer z Gdyni, Polska",
+    "cta": "Skontaktuj się ze mną"
+  },
+  "Experience": {
+    "title": "Doświadczenie",
+    "job1": {
+      "title": "Stażysta - Fullstack Developer",
+      "company": "Procforce",
+      "period": "Cze 2026 - Wrz 2026"
+    }
+  },
+  "Projects": {
+    "title": "Projekty",
+    "caseStudy": "Zobacz case study",
+    "items": [
+      {
+        "name": "KKOL - Karwińska Olimpiada",
+        "description": "Kompleksowa platforma do zarządzania turniejami: harmonogramy meczów, rankingi na żywo, ankiety oraz personalne terminarze."
+      },
+      {
+        "name": "Loles",
+        "description": "Narzędzie analityczne dla graczy League of Legends: analiza matchupów, statystyki, historia rozgrywek oraz zaawansowany system notatek."
+      }
+    ]
+  },
+  "Skills": {
+    "title": "Umiejętności"
+  },
+  "About": {
+    "title": "O mnie",
+    "paragraph1": "TODO",
+    "paragraph2": "TODO"
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "subtitle": "Chętnie porozmawiam o nowych projektach, wyzwaniach architektonicznych lub potencjalnej współpracy.",
+    "emailLabel": "Napisz bezpośrednio",
+    "locationLabel": "Lokalizacja",
+    "locationValue": "Gdynia, Polska",
+    "form": {
+      "nameLabel": "Twoje imię",
+      "namePlaceholder": "np. Jan Kowalski",
+      "emailLabel": "Adres e-mail",
+      "emailPlaceholder": "jan@example.com",
+      "messageLabel": "Wiadomość",
+      "messagePlaceholder": "Opisz krótko swój projekt lub pytanie...",
+      "submitButton": "Wyślij wiadomość"
+    }
+  },
+  "Footer": {
+    "role": "Fullstack Developer",
+    "bio": "Tworzę aplikacje webowe w oparciu o architekturę Next.js, React, TypeScript oraz design nastawiony na UX.",
+    "location": "Gdynia, Polska",
+    "navTitle": "Nawigacja",
+    "nav": {
+      "home": "Strona główna",
+      "experience": "Doświadczenie",
+      "projects": "Wybrane projekty",
+      "skills": "Umiejętności & Stack",
+      "about": "O mnie",
+      "contact": "Kontakt"
+    },
+    "expertiseTitle": "Specjalizacja",
+    "expertise": {
+      "item1": "Architektura Next.js & React",
+      "item2": "Rozwiązania Fullstack TypeScript",
+      "item3": "Optymalizacja Core Web Vitals",
+      "item4": "Design Systemy & Świadomy UX"
+    },
+    "connectTitle": "Social & Kontakt",
+    "rights": "Wszelkie prawa zastrzeżone",
+    "backToTop": "Wróć na górę"
   }
 }
-
-

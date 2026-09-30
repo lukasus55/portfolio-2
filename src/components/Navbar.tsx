@@ -1,43 +1,133 @@
-import { getTranslations } from "next-intl/server";
-import LanguageSwitcher from "./LanguageSwitcher";
-import { Link } from "@/i18n/routing";
+"use client";
 
-export default async function Navbar() {
-  const t = await getTranslations("Nav");
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
+
+export default function Navbar() {
+  const t = useTranslations("Nav");
+  const [showIdentity, setShowIdentity] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Wykryj pozycję sekcji hero lub scroll powyżej 260px
+      const heroElement = document.getElementById("hero");
+      if (heroElement) {
+        const rect = heroElement.getBoundingClientRect();
+        // Jeśli dolna krawędź hero mija górę ekranu, pokaż tożsamość w navbarze
+        setShowIdentity(rect.bottom < 100);
+      } else {
+        setShowIdentity(window.scrollY > 200);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="w-full sticky top-0 z-50 bg-background border-b border-text/5">
-      <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-        {/* Logo / Name */}
-        <Link
-          href="/"
-          className="font-header text-xl tracking-tight font-bold hover:opacity-75 transition-opacity cursor-pointer"
-        >
-          lukas<span className="text-primary">.</span>
-        </Link>
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        {/* Navigation links & Language Switcher */}
-        <div className="flex items-center gap-8 md:gap-10">
-          <nav className="flex items-center gap-6 md:gap-8 text-sm font-medium">
+        {/* Dynamic Avatar + Name (pojawia się gdy Hero znika z widoku) */}
+        <div className="flex items-center min-h-[40px]">
+          <a
+            href="#hero"
+            className={`flex items-center gap-3 transition-all duration-300 cursor-pointer group ${showIdentity
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 -translate-y-2 pointer-events-none"
+              }`}
+          >
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-text/10 group-hover:border-accent bg-neutral-100 shrink-0 transition-colors">
+              <Image
+                src="/pfp.jpg"
+                alt="Łukasz Kostyk - awatar"
+                fill
+                sizes="36px"
+                className="object-cover"
+              />
+            </div>
+            <span className="font-header text-base tracking-tight font-bold text-text group-hover:text-accent transition-colors">
+              Łukasz Kostyk
+            </span>
+          </a>
+        </div>
+
+        {/* Navigation links, Social buttons & Language Switcher */}
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+          <nav className="hidden sm:flex items-center gap-5 md:gap-8 text-sm font-medium">
             <a
               href="#experience"
-              className="text-text/70 hover:text-text transition-colors cursor-pointer"
+              className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("experience")}
             </a>
             <a
               href="#projects"
-              className="text-text/70 hover:text-text transition-colors cursor-pointer"
+              className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("projects")}
             </a>
             <a
+              href="#skills"
+              className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
+            >
+              {t("skills")}
+            </a>
+            <a
               href="#about"
-              className="text-text/70 hover:text-text transition-colors cursor-pointer"
+              className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("about")}
             </a>
+            <a
+              href="#contact"
+              className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
+            >
+              {t("contact")}
+            </a>
           </nav>
+
+          {/* Social Links: GitHub & LinkedIn */}
+          <div className="flex items-center gap-1.5 text-text/75">
+            <a
+              href="https://github.com/lukasus55"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub - Łukasz Kostyk"
+              className="flex items-center justify-center w-9 h-9 rounded-sm hover:text-accent hover:bg-neutral-100 transition-colors duration-150 cursor-pointer"
+            >
+              <svg
+                className="w-[19px] h-[19px] fill-current"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/lkostyk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn - Łukasz Kostyk"
+              className="flex items-center justify-center w-9 h-9 rounded-sm hover:text-accent hover:bg-neutral-100 transition-colors duration-150 cursor-pointer"
+            >
+              <svg
+                className="w-[19px] h-[19px] fill-current"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+              </svg>
+            </a>
+          </div>
 
           <LanguageSwitcher />
         </div>

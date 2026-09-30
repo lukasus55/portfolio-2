@@ -2,12 +2,84 @@
   "Nav": {
     "experience": "Experience",
     "projects": "Projects",
-    "about": "About me"
+    "skills": "Skills",
+    "about": "About me",
+    "contact": "Contact"
   },
   "Hero": {
-    "title": "Portfolio",
-    "subtitle": "Software Engineer & Designer"
+    "greeting": "Hi, I am",
+    "name": "Łukasz Kostyk",
+    "role": "Fullstack developer from Gdynia, Poland",
+    "cta": "Get in touch"
+  },
+  "Experience": {
+    "title": "Experience",
+    "job1": {
+      "title": "Intern - Fullstack Developer",
+      "company": "Procforce",
+      "period": "Jun 2026 - Sep 2026"
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "caseStudy": "Read case study",
+    "items": [
+      {
+        "name": "KKOL - Karwinska Olimpiada",
+        "description": "Comprehensive tournament management platform: match schedules, live rankings, community polls, and personalized fixtures."
+      },
+      {
+        "name": "Loles",
+        "description": "Performance analytics assistant for League of Legends players: matchup intelligence, match history, statistics, and tactical notes."
+      }
+    ]
+  },
+  "Skills": {
+    "title": "Skills"
+  },
+  "About": {
+    "title": "About Me",
+    "paragraph1": "TODO",
+    "paragraph2": "TODO"
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "Feel free to reach out regarding new projects, architectural challenges, or potential collaborations.",
+    "emailLabel": "Drop an email",
+    "locationLabel": "Location",
+    "locationValue": "Gdynia, Poland",
+    "form": {
+      "nameLabel": "Your Name",
+      "namePlaceholder": "e.g. John Doe",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "john@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project or inquiry...",
+      "submitButton": "Send message"
+    }
+  },
+  "Footer": {
+    "role": "Fullstack Developer",
+    "bio": "Engineering web applications based on Next.js, React, TypeScript and focusing on performance and UX.",
+    "location": "Gdynia, Poland",
+    "navTitle": "Navigation",
+    "nav": {
+      "home": "Home",
+      "experience": "Experience",
+      "projects": "Featured projects",
+      "skills": "Skills & Stack",
+      "about": "About me",
+      "contact": "Contact"
+    },
+    "expertiseTitle": "Expertise",
+    "expertise": {
+      "item1": "Next.js & React Architecture",
+      "item2": "Fullstack TypeScript Systems",
+      "item3": "Core Web Vitals Optimization",
+      "item4": "Design Systems & User Experience"
+    },
+    "connectTitle": "Social & Connect",
+    "rights": "All rights reserved",
+    "backToTop": "Back to top"
   }
 }
-
-

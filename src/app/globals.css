@@ -65,3 +65,27 @@ body {
     font-size: 0.75rem;
   }
 }
+
+/* Animacja bezszwowego przepływu fal morskich (Baltic Waves Flow) */
+@keyframes waveFlowForward {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-coast-flow {
+  animation: waveFlowForward 120s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-coast-flow,
+  .animate-wave-flow-1,
+  .animate-wave-flow-2,
+  .animate-wave-flow-3 {
+    animation: none !important;
+  }
+}

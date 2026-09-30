@@ -9,7 +9,8 @@
   "Hero": {
     "greeting": "Hi, I am",
     "name": "Łukasz Kostyk",
-    "role": "Fullstack developer from Gdynia, Poland",
+    "role": "Fullstack developer",
+    "location": "Gdynia, Poland",
     "cta": "Get in touch"
   },
   "Experience": {

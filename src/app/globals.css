@@ -81,11 +81,27 @@ body {
   will-change: transform;
 }
 
+/* Animacja kołysania grzbietu fali wewnątrz buttona (Marine Tide Hover) */
+@keyframes tideDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-tide-drift {
+  animation: tideDrift 2.5s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-coast-flow,
   .animate-wave-flow-1,
   .animate-wave-flow-2,
-  .animate-wave-flow-3 {
+  .animate-wave-flow-3,
+  .animate-tide-drift {
     animation: none !important;
   }
 }

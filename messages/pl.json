@@ -15,10 +15,19 @@
   },
   "Experience": {
     "title": "Doświadczenie",
-    "job1": {
-      "title": "Stażysta - Fullstack Developer",
+    "procforce": {
       "company": "Procforce",
-      "period": "Cze 2026 - Wrz 2026"
+      "totalPeriod": "Cze 2026 - obecnie",
+      "role1": {
+        "title": "Fullstack Developer",
+        "type": "Projektowo",
+        "period": "Paź 2026 - obecnie"
+      },
+      "role2": {
+        "title": "Stażysta - Fullstack Developer",
+        "type": "Pełny etat",
+        "period": "Cze 2026 - Wrz 2026"
+      }
     }
   },
   "Projects": {

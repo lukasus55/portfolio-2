@@ -15,10 +15,19 @@
   },
   "Experience": {
     "title": "Experience",
-    "job1": {
-      "title": "Intern - Fullstack Developer",
+    "procforce": {
       "company": "Procforce",
-      "period": "Jun 2026 - Sep 2026"
+      "totalPeriod": "Jun 2026 - Present",
+      "role1": {
+        "title": "Fullstack Developer",
+        "type": "Project-based",
+        "period": "Oct 2026 - Present"
+      },
+      "role2": {
+        "title": "Intern - Fullstack Developer",
+        "type": "Full-time",
+        "period": "Jun 2026 - Sep 2026"
+      }
     }
   },
   "Projects": {

@@ -24,7 +24,7 @@ const projectsData: ProjectData[] = [
     id: "loles",
     nameKey: "items.1.name",
     descKey: "items.1.description",
-    video: "/video_placeholder.mp4",
+    video: "/projects/loles/preview.mp4",
     poster: "/projects/loles/home.png",
   },
 ];

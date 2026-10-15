@@ -3,20 +3,26 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const t = useTranslations("Nav");
-  const [showIdentity, setShowIdentity] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/" || pathname === "";
+  const [showIdentity, setShowIdentity] = useState(!isHomePage);
 
   useEffect(() => {
+    if (!isHomePage) {
+      setShowIdentity(true);
+      return;
+    }
+
     const handleScroll = () => {
-      // Wykryj pozycję sekcji hero lub scroll powyżej 260px
+      // Wykryj pozycję sekcji hero lub scroll powyżej 260px na stronie głównej
       const heroElement = document.getElementById("hero");
       if (heroElement) {
         const rect = heroElement.getBoundingClientRect();
-        // Jeśli dolna krawędź hero mija górę ekranu, pokaż tożsamość w navbarze
         setShowIdentity(rect.bottom < 100);
       } else {
         setShowIdentity(window.scrollY > 200);
@@ -26,7 +32,7 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   return (
     <header className="w-full sticky top-0 z-50 bg-background border-b border-text/5">

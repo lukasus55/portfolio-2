@@ -35,11 +35,11 @@
     "caseStudy": "Read case study",
     "items": [
       {
-        "name": "KKOL - Karwinska Olimpiada",
+        "name": "Karwinska Olimpiada",
         "description": "Comprehensive tournament management platform: match schedules, live rankings, community polls, and personalized fixtures."
       },
       {
-        "name": "Loles",
+        "name": "LOLES",
         "description": "Performance analytics assistant for League of Legends players: matchup intelligence, match history, statistics, and tactical notes."
       }
     ]
@@ -91,5 +91,98 @@
     "connectTitle": "Social & Connect",
     "rights": "All rights reserved",
     "backToTop": "Back to top"
+  },
+  "CaseStudy": {
+    "backToProjects": "Back to projects",
+    "roleLabel": "Role",
+    "timelineLabel": "Timeline",
+    "stackLabel": "Tech Stack",
+    "liveDemo": "Live Application",
+    "github": "Source Code",
+    "tocTitle": "Table of contents",
+    "overviewTitle": "Genesis & Objective",
+    "problemTitle": "Problem & Context",
+    "goalTitle": "Primary Goal",
+    "featuresTitle": "Key Features",
+    "ecosystemTitle": "Ecosystem & Companion Apps",
+    "subAppPrefix": "Sub-app",
+    "visitSubApp": "View live",
+    "challengesTitle": "Engineering Challenges",
+    "nextProject": "Next Project",
+    "viewNext": "Explore case study",
+    "kkol": {
+      "tagline": "Tournament platform and year-round community event hub — from the annual olympiad to tiered board game gatherings.",
+      "role": "Lead Fullstack Developer",
+      "timeline": "6 months (ongoing development)",
+      "overviewStory": "While Karwińska Olimpiada originated around a flagship annual multi-sport competition, community activity naturally expanded into year-round gatherings — ranging from tactical board game nights to seasonal mini-tournaments. All activities were organized into an event tier system reflecting their competitive scale, scoring, and format. Previously, coordinating dates, sign-ups, and standings across tangled spreadsheets and chat apps resulted in constant scheduling friction.",
+      "overviewGoal": "Architect a unified digital hub that categorizes activities by tiers (flagship olympiad, companion tournaments, casual board game sessions), automates conflict-free scheduling, broadcasts live match brackets, and provides athletes with personalized mobile schedules.",
+      "features": {
+        "schedule": {
+          "title": "Personalized athlete agenda",
+          "desc": "Authenticated participants see only their upcoming matches and events with exact start times, court allocations, and instant delay notifications."
+        },
+        "tournaments": {
+          "title": "Interactive tournament brackets",
+          "desc": "Live round-robin and knockout brackets. Match scores entered by referees instantly recalculate standings, point differentials, and qualification paths."
+        },
+        "ranking": {
+          "title": "Real-time overall leaderboard",
+          "desc": "An aggregated points table dynamically computing multisport standings across all disciplines, keeping players informed without waiting for end-of-day recaps."
+        },
+        "poll": {
+          "title": "Community polls & MVP voting",
+          "desc": "An interactive voting module allowing athletes to elect tournament MVPs, vote on standout plays, and provide feedback on event organization."
+        }
+      },
+      "subApps": {
+        "dartes": {
+          "desc": "Dedicated live darts scoreboard companion app (dart.kkol.pl), engineered and used during Season 2026 of Karwińska Olimpiada. It forms an integral part of the ecosystem, handling automatic leg scoring, checkout calculations, and feeding live results into tournament leaderboards."
+        },
+        "bot": {
+          "desc": "Dedicated Discord bot integrated directly with the kkol.pl calendar. It automatically generates interactive availability polls for upcoming community events (such as board game meetups) and broadcasts weekly trivia and historical stats configured by administrators on the platform."
+        }
+      },
+      "challenges": {
+        "permissions": {
+          "title": "Hierarchical & Contextual Multi-Level RBAC",
+          "desc": "The platform required a nuanced access control architecture spanning global tiers (Admin, Organizer, Player), tournament-level delegations, and fine-grained sub-module permissions (such as community polls and fixture scheduling). Organizers can assign tournament co-management and scoring rights to designated participants. Furthermore, within specific modules like polls, organizers independently configure participant capabilities (e.g., allowing players to submit questions while restricting tag and label editing), while administrators maintain a global, universal override across all events. Engineering this required a flexible, performant authorization matrix and middleware capable of validating context-aware permissions without repetitive logic or database bottlenecks."
+        },
+        "ecosystem": {
+          "title": "Cross-Service Ecosystem & Unified Authentication",
+          "desc": "KKOL evolved beyond a standalone platform into an ecosystem linking kkol.pl, the dart.kkol.pl companion app, and a Discord automation bot. The challenge centered on implementing unified identity and SSO across satellite subdomains via KKOL accounts, alongside reliable inter-service synchronization. The Discord bot securely communicates with the KKOL backend: reading scheduled calendar events, dispatching interactive date-selection polls to server channels, and recording dispatched weekly trivia directly in the database, ensuring transactional integrity and real-time state parity across distinct services."
+        }
+      }
+    },
+    "loles": {
+      "tagline": "Matchup intelligence and tactical notes assistant for League of Legends players.",
+      "role": "Creator & Fullstack Engineer",
+      "timeline": "3 weeks (focused sprint)",
+      "overviewStory": "In League of Legends, victory often hinges on precise knowledge of lane matchups and opponent cooldowns. Existing analytical hubs overwhelm players with raw winrate tables without offering personal tactical note-taking.",
+      "overviewGoal": "Build a lightweight, zero-latency tool enabling players during the loading screen to swiftly inspect matchup cooldowns, consult matchup history, and record tactical takeaways for future encounters.",
+      "features": {
+        "matchup": {
+          "title": "Matchup intelligence hub",
+          "desc": "Instant overview of matchup dynamics, power spikes, key opponent ability cooldowns, and lane phase battle strategies."
+        },
+        "notes": {
+          "title": "Tactical personal notebook",
+          "desc": "Save custom notes against specific champions and matchups that automatically resurface whenever you face that matchup again."
+        },
+        "stats": {
+          "title": "Filtered performance analytics",
+          "desc": "Clean breakdown of personal matchup win rates and stats to systematically spot recurring mistakes and measure mechanical improvement."
+        }
+      },
+      "challenges": {
+        "performance": {
+          "title": "Sub-100ms Loading Speed & Bundle Optimization (Zero Latency)",
+          "desc": "League of Legends loading screens frequently last under a minute. The application had to achieve immediate interactivity, eliminating bulky third-party dependencies and blocking roundtrips. Through precise tree-shaking and aggressive in-memory caching of static champion assets, interactive lookup times for crucial ability cooldowns remain under 100ms from tab launch."
+        },
+        "offline": {
+          "title": "Serverless Client-Side Persistence & Note Synchronization",
+          "desc": "Engineered a fully autonomous client storage engine using IndexedDB and LocalStorage, securely retaining hundreds of tactical matchup notes right inside the player's browser. This guarantees user privacy with zero cloud infrastructure overhead, while native JSON import/export mechanisms enable seamless data backups and cross-device migration."
+        }
+      }
+    }
   }
 }

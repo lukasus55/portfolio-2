@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 625" width="1000" height="625" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ff6940"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="625" fill="#ffffff"/>
+
+  <!-- ==================== LEVEL 1: ADMINISTRATOR ==================== -->
+  <g transform="translate(500, 20)">
+    <!-- Pill -->
+    <rect x="-115" y="0" width="230" height="34" rx="17" fill="#fff5f2" stroke="#ff6940" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#ff6940" font-size="15" font-weight="700" letter-spacing="1.5">ADMINISTRATOR</text>
+    
+    <!-- Big prominent text -->
+    <text x="0" y="68" text-anchor="middle" fill="#111827" font-size="28" font-weight="700">Uniwersalny bypass wszystkich reguł</text>
+    <text x="0" y="98" text-anchor="middle" fill="#6b7280" font-size="18">Globalny dostęp do każdego turnieju, modułu i ustawień</text>
+  </g>
+
+  <!-- Flow Arrow 1 -> 2 -->
+  <line x1="500" y1="130" x2="500" y2="185" stroke="#ff6940" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <!-- ==================== LEVEL 2: ORGANIZATOR ==================== -->
+  <g transform="translate(500, 195)">
+    <!-- Pill -->
+    <rect x="-105" y="0" width="210" height="34" rx="17" fill="#fff5f2" stroke="#ff6940" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#ff6940" font-size="15" font-weight="700" letter-spacing="1.5">ORGANIZATOR</text>
+    
+    <!-- Big prominent text -->
+    <text x="0" y="68" text-anchor="middle" fill="#111827" font-size="28" font-weight="700">Tworzenie turniejów i delegacja uprawnień</text>
+    <text x="0" y="98" text-anchor="middle" fill="#6b7280" font-size="18">Pełna edycja własnego turnieju oraz nadawanie praw</text>
+  </g>
+
+  <!-- Branching Arrows 2 -> 3 -->
+  <path d="M 500 305 L 500 355 L 250 355 L 250 405" fill="none" stroke="#ff6940" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M 500 305 L 500 355 L 750 355 L 750 405" fill="none" stroke="#ff6940" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <!-- ==================== LEVEL 3: WSPÓŁORGANIZATOR ==================== -->
+  <g transform="translate(250, 415)">
+    <!-- Pill -->
+    <rect x="-120" y="0" width="240" height="34" rx="17" fill="#fff5f2" stroke="#ff6940" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#ff6940" font-size="14" font-weight="700" letter-spacing="1">WSPÓŁORGANIZATOR</text>
+    
+    <!-- Big prominent text -->
+    <text x="0" y="68" text-anchor="middle" fill="#111827" font-size="26" font-weight="700">Współedycja turnieju</text>
+    <text x="0" y="98" text-anchor="middle" fill="#6b7280" font-size="17">Zarządzanie meczami i wynikami</text>
+    <text x="0" y="124" text-anchor="middle" fill="#9ca3af" font-size="15">W ramach przypisanego wydarzenia</text>
+  </g>
+
+  <!-- ==================== LEVEL 3: GRACZ ==================== -->
+  <g transform="translate(750, 415)">
+    <!-- Pill -->
+    <rect x="-75" y="0" width="150" height="34" rx="17" fill="#fff5f2" stroke="#ff6940" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#ff6940" font-size="14" font-weight="700" letter-spacing="1">GRACZ</text>
+    
+    <!-- Big prominent text -->
+    <text x="0" y="68" text-anchor="middle" fill="#111827" font-size="26" font-weight="700">Reguły modułowe</text>
+    <text x="0" y="98" text-anchor="middle" fill="#6b7280" font-size="17">Np. edycja pytań w ankietach</text>
+    <text x="0" y="124" text-anchor="middle" fill="#9ca3af" font-size="15">Zablokowana edycja etykiet i konfiguracji</text>
+  </g>
+</svg>

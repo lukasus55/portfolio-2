@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/Button";
@@ -10,6 +11,7 @@ interface ProjectData {
   descKey: string;
   video: string;
   poster: string;
+  logo: string;
 }
 
 const projectsData: ProjectData[] = [
@@ -19,6 +21,7 @@ const projectsData: ProjectData[] = [
     descKey: "items.0.description",
     video: "/video_placeholder.mp4",
     poster: "/projects/kkol/home.png",
+    logo: "/projects/kkol/logo.svg",
   },
   {
     id: "loles",
@@ -26,6 +29,7 @@ const projectsData: ProjectData[] = [
     descKey: "items.1.description",
     video: "/projects/loles/preview.mp4",
     poster: "/projects/loles/home.png",
+    logo: "/projects/loles/logo.svg",
   },
 ];
 
@@ -53,9 +57,20 @@ export default function ProjectsSection() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
                   <div className="space-y-2">
-                    <h3 className="text-3xl sm:text-4xl font-medium font-header text-text tracking-tight">
-                      {t(project.nameKey)}
-                    </h3>
+                    <div className="flex items-center gap-3">
+                      <div className="relative h-7 sm:h-8 w-auto shrink-0 flex items-center">
+                        <Image
+                          src={project.logo}
+                          alt={`Logo ${t(project.nameKey)}`}
+                          width={72}
+                          height={32}
+                          className="h-7 sm:h-8 w-auto object-contain"
+                        />
+                      </div>
+                      <h3 className="text-3xl sm:text-4xl font-medium font-header text-text tracking-tight">
+                        {t(project.nameKey)}
+                      </h3>
+                    </div>
                     <p className="text-base sm:text-lg text-neutral-600 max-w-2xl leading-relaxed">
                       {t(project.descKey)}
                     </p>

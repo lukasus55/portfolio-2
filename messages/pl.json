@@ -35,11 +35,11 @@
     "caseStudy": "Zobacz case study",
     "items": [
       {
-        "name": "KKOL - Karwińska Olimpiada",
+        "name": "Karwińska Olimpiada",
         "description": "Kompleksowa platforma do zarządzania turniejami: harmonogramy meczów, rankingi na żywo, ankiety oraz personalne terminarze."
       },
       {
-        "name": "Loles",
+        "name": "LOLES",
         "description": "Narzędzie analityczne dla graczy League of Legends: analiza matchupów, statystyki, historia rozgrywek oraz zaawansowany system notatek."
       }
     ]
@@ -91,5 +91,98 @@
     "connectTitle": "Social & Kontakt",
     "rights": "Wszelkie prawa zastrzeżone",
     "backToTop": "Wróć na górę"
+  },
+  "CaseStudy": {
+    "backToProjects": "Wróć do projektów",
+    "roleLabel": "Rola",
+    "timelineLabel": "Czas trwania",
+    "stackLabel": "Technologie",
+    "liveDemo": "Odwiedź aplikację",
+    "github": "Kod źródłowy",
+    "tocTitle": "Spis treści",
+    "overviewTitle": "Geneza & Cel",
+    "problemTitle": "Problem i kontekst",
+    "goalTitle": "Główny cel",
+    "featuresTitle": "Kluczowe funkcjonalności",
+    "ecosystemTitle": "Ekosystem & Powiązane aplikacje",
+    "subAppPrefix": "Subaplikacja",
+    "visitSubApp": "Zobacz na żywo",
+    "challengesTitle": "Wyzwania inżynieryjne",
+    "nextProject": "Następny projekt",
+    "viewNext": "Zobacz case study",
+    "kkol": {
+      "tagline": "Platforma turniejowa i całoroczne centrum wydarzeń społeczności — od corocznej olimpiady po spotkania planszówkowe z podziałem na tiery.",
+      "role": "Lead Fullstack Developer",
+      "timeline": "6 miesięcy (rozwój ciągły)",
+      "overviewStory": "Karwińska Olimpiada narodziła się jako coroczny, flagowy turniej wielodyscyplinarny, jednak z czasem wokół społeczności rozwinęła się potrzeba koordynowania aktywności przez cały rok — od regularnych spotkań na planszówki po mniejsze zawody towarzyskie. Wszystkie te inicjatywy zostały zorganizowane w przejrzysty system tierów, odzwierciedlający rangę, punktację i format wydarzenia. Wcześniejsza organizacja oparta na rozproszonych arkuszach i komunikatorach nie pozwalała na wygodne planowanie terminów ani spójną historię rozgrywek.",
+      "overviewGoal": "Stworzenie kompleksowego ekosystemu webowego, który kategoryzuje wydarzenia na tiery (główne igrzyska, mniejsze turnieje, spotkania integracyjne), automatyzuje ustalanie terminów i generowanie bezkolizyjnych harmonogramów oraz prezentuje wyniki na żywo ze spersonalizowanym widokiem dla każdego uczestnika.",
+      "features": {
+        "schedule": {
+          "title": "Spersonalizowany harmonogram",
+          "desc": "Uczestnik po zalogowaniu widzi wyłącznie mecze i dyscypliny, w których bierze bezpośredni udział, wraz z godziną, lokalizacją i powiadomieniami o ewentualnych przesunięciach czasowych."
+        },
+        "tournaments": {
+          "title": "Drabinki i tabele turniejowe",
+          "desc": "Dynamicznie aktualizowane fazy grupowe i pucharowe. Wyniki wprowadzane przez sędziów natychmiast przeliczają punkty, bilans i awanse do kolejnych rund."
+        },
+        "ranking": {
+          "title": "Klasyfikacja generalna na żywo",
+          "desc": "Zintegrowana tabela punktowa zliczająca rezultaty ze wszystkich dyscyplin. Uczestnicy śledzą walkę o puchar w czasie rzeczywistym bez czekania na wieczorne podsumowanie."
+        },
+        "poll": {
+          "title": "Głosowania i ankiety społeczności",
+          "desc": "Moduł plebiscytów umożliwiający uczestnikom wybór MVP turnieju, najciekawszego zagrania oraz ocenę organizacji poszczególnych dyscyplin."
+        }
+      },
+      "subApps": {
+        "dartes": {
+          "desc": "Dedykowana aplikacja tablicy wyników do darta (dart.kkol.pl), stworzona i używana podczas sezonu 2026 Karwińskiej Olimpiady. Stanowi integralną część ekosystemu, odpowiadając za automatyczne przeliczanie legów, checkoutów oraz bezpośrednie zasilanie tabeli punktowej turnieju."
+        },
+        "bot": {
+          "desc": "Dedykowany bot na Discordzie sprzężony z kalendarzem na kkol.pl. Automatycznie publikuje ankiety z głosowaniem nad terminem nadchodzących wydarzeń (np. planszówek) oraz serwuje czwartkowe ciekawostki i statystyki konfigurowane przez administratora na platformie."
+        }
+      },
+      "challenges": {
+        "permissions": {
+          "title": "Wielopoziomowy system uprawnień i ról kontekstowych",
+          "desc": "Architektura platformy wymagała obsługi złożonej hierarchii dostępu: od ról globalnych (Administrator, Organizator, Gracz), przez uprawnienia na poziomie konkretnego turnieju, aż po granularne prawa w podmodułach (np. ankiety czy terminarze). Organizator turnieju może delegować uprawnienia współedycji wybranym uczestnikom lub współorganizatorom. Wewnątrz modułów (np. ankiet) organizator decyduje o możliwościach graczy — np. edycja pytań bez prawa do modyfikacji etykiet. Całość spina nadrzędny bypass administracyjny, gwarantujący administratorom pełny dostęp do każdego elementu niezależnie od przypisania, zrealizowany bez kompromisów wydajnościowych przy odpytywaniu bazy danych."
+        },
+        "ecosystem": {
+          "title": "Wspólna autoryzacja i orkiestracja ekosystemu",
+          "desc": "KKOL ewoluował z pojedynczej aplikacji w ekosystem współpracujących serwisów: platformy kkol.pl, subaplikacji dart.kkol.pl oraz bota Discordowego. Kluczowym wyzwaniem było zaprojektowanie łączonej autoryzacji (SSO) umożliwiającej logowanie kontem KKOL do narzędzi satelickich oraz bezpieczna, asynchroniczna komunikacja procesów w tle. Bot Discordowy bezpośrednio odpytuje kalendarz bazy danych o nadchodzące wydarzenia, tworzy interaktywne ankiety i odznacza wysłane ciekawostki, dbając o atomowość transakcji i spójność stanu pomiędzy serwerem Discord a platformą webową."
+        }
+      }
+    },
+    "loles": {
+      "tagline": "Narzędzie wywiadu meczowego i notatek taktycznych dla graczy League of Legends.",
+      "role": "Creator & Fullstack Engineer",
+      "timeline": "3 tygodnie (intensywny sprint)",
+      "overviewStory": "W League of Legends kluczowe znaczenie ma wiedza o konkretnym matchupie na linii oraz nawykach przeciwnika. Istniejące serwisy statystyczne zasypują graczy surowymi procentami wygranych, nie oferując przestrzeni na własne wnioski i personalne notatki taktyczne.",
+      "overviewGoal": "Stworzenie lekkiego, ultraszybkiego narzędzia, które w trakcie ładowania gry pozwala natychmiast podejrzeć kluczowe cooldowny i umiejętności rywala, przejrzeć historię bezpośrednich starć oraz zapisać wnioski na przyszłość.",
+      "features": {
+        "matchup": {
+          "title": "Baza wiedzy o matchupach",
+          "desc": "Szybki podgląd silnych i słabych stron wybranego pojedynku na linii, czasów odnowienia kluczowych umiejętności przeciwnika oraz rekomendowanych strategii wczesnej fazy gry."
+        },
+        "notes": {
+          "title": "Personalny notatnik taktyczny",
+          "desc": "Możliwość przypisywania własnych notatek do konkretnych bohaterów i matchupów, które pojawiają się automatycznie, gdy ponownie trafisz na danego przeciwnika."
+        },
+        "stats": {
+          "title": "Filtrowana historia i skuteczność",
+          "desc": "Przejrzysta analityka własnych wyników w rozbiciu na grane postacie, pozwalająca identyfikować powtarzające się błędy i mierzyć progres w czasie."
+        }
+      },
+      "challenges": {
+        "performance": {
+          "title": "Błyskawiczny czas startu i optymalizacja ładowania (Zero Latency)",
+          "desc": "Ekran ładowania meczu w League of Legends trwa często poniżej minuty. Aplikacja musiała gwarantować natychmiastową gotowość do działania, eliminując ciężkie biblioteki zewnętrzne i blokujące requesty sieciowe. Dzięki precyzyjnemu tree-shakingowi oraz agresywnemu cache'owaniu statycznych danych bohaterów, czas interaktywności i podglądu kluczowych cooldownów wynosi poniżej 100ms od otwarcia karty."
+        },
+        "offline": {
+          "title": "Lokalna trwałość danych bez serwera i synchronizacja notatek",
+          "desc": "Zaprojektowano w pełni autonomiczny silnik danych oparty o IndexedDB i LocalStorage, który przechowuje setki spersonalizowanych notatek taktycznych bezpośrednio w przeglądarce użytkownika. Rozwiązanie zapewnia pełną prywatność danych bez konieczności utrzymywania kosztownego backendu, a wbudowany mechanizm importu/eksportu struktur JSON gwarantuje bezpieczną migrację danych między urządzeniami."
+        }
+      }
+    }
   }
 }

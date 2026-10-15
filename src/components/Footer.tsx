@@ -1,16 +1,17 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const t = useTranslations("Footer");
 
   const navLinks = [
-    { label: t("nav.home"), href: "#hero" },
-    { label: t("nav.experience"), href: "#experience" },
-    { label: t("nav.projects"), href: "#projects" },
-    { label: t("nav.skills"), href: "#skills" },
-    { label: t("nav.about"), href: "#about" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.home"), href: "/#hero" },
+    { label: t("nav.experience"), href: "/#experience" },
+    { label: t("nav.projects"), href: "/#projects" },
+    { label: t("nav.skills"), href: "/#skills" },
+    { label: t("nav.about"), href: "/#about" },
+    { label: t("nav.contact"), href: "/#contact" },
   ];
   const expertiseItems = [t("expertise.item1"), t("expertise.item2"), t("expertise.item3"), t("expertise.item4")];
 
@@ -43,12 +44,12 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-neutral-400">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="hover:text-accent transition-colors duration-150 cursor-pointer block"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

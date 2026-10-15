@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
@@ -33,8 +34,8 @@ export default function Navbar() {
 
         {/* Dynamic Avatar + Name (pojawia się gdy Hero znika z widoku) */}
         <div className="flex items-center min-h-[40px]">
-          <a
-            href="#hero"
+          <Link
+            href="/#hero"
             className={`flex items-center gap-3 transition-all duration-300 cursor-pointer group ${showIdentity
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-2 pointer-events-none"
@@ -52,42 +53,42 @@ export default function Navbar() {
             <span className="font-header text-base tracking-tight font-medium text-text group-hover:text-accent transition-colors">
               Łukasz Kostyk
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* Navigation links, Social buttons & Language Switcher */}
         <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
           <nav className="hidden sm:flex items-center gap-5 md:gap-8 text-sm font-medium">
-            <a
-              href="#experience"
+            <Link
+              href="/#experience"
               className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("experience")}
-            </a>
-            <a
-              href="#projects"
+            </Link>
+            <Link
+              href="/#projects"
               className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("projects")}
-            </a>
-            <a
-              href="#skills"
+            </Link>
+            <Link
+              href="/#skills"
               className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("skills")}
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              href="/#about"
               className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("about")}
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/#contact"
               className="text-text/75 hover:text-accent transition-colors duration-150 cursor-pointer"
             >
               {t("contact")}
-            </a>
+            </Link>
           </nav>
 
           {/* Social Links: GitHub & LinkedIn */}

@@ -118,5 +118,18 @@ Dbamy o doskonałą widoczność w wyszukiwarkach oraz pełną semantykę techni
   - Zawsze dokładnie jeden `h1` na stronę jako główny temat widoku.
   - Zachowaj poprawną hierarchię nagłówków (`h1` -> `h2` -> `h3`), nie pomijając poziomów dla czystego stylowania (do stylów używaj klas typograficznych, zachowując logiczne znaczniki semantyczne).
 
+## 11. Copywriting Techniczny i Długie Formy Tekstu (Obowiązkowy COPY_GUIDELINES.md)
+Przed generowaniem lub modyfikacją jakichkolwiek dłuższych form tekstu (case studies, opisy projektów, devlogi, sekcje „O mnie”, podsumowania techniczne):
+- **Bezwzględny obowiązek przeczytania i stosowania zasad z pliku [`COPY_GUIDELINES.md`](./COPY_GUIDELINES.md)**.
+- **Kluczowe założenia**:
+  - Pisz wyłącznie z perspektywy **1. osoby** („Zbudowałem”, „Zaprojektowałem”, „Wybrałem”, „Stanąłem przed problemem”) — zero bezosobowej strony biernej i „korporacyjnego my”.
+  - **Zakaz przymiotnikozy**: Pokaż techniczny fakt, liczbę lub decyzję zamiast pustych epitetów („super czysty”, „mega inteligentny”, „innowacyjny”, „potężny”, „bezszwowy”).
+  - **Bezwzględny zakaz słów-wytrychów z czarnej listy AI** (*kluczowy*, *fundamentalny*, *dedykowany*, *delve*, *harness*, *elevate*, formuły *„To nie tylko X, ale również Y”*, sztuczne trójki przymiotnikowe).
+  - Pisz konkretnie, ludzkim tonem, jak inżynier rozmawiający z innym programistą przy kawie.
+  - **Zakaz zmyślania liczb („Nie wyciągaj liczb z dupy”)**:
+    - Zero fantazjowania o procentach, czasach i użytkownikach.
+    - Jeśli metryka wzmocni treść: wstaw placeholder `[PLACEHOLDER: opis]` i na koniec prompta zapytaj developera o realne liczby.
+    - Po poznaniu liczb oceń krytycznie: jeśli robią wrażenie $\rightarrow$ wstaw je; jeśli są skromne/nieistotne $\rightarrow$ zastąp je rzetelnym ogólnikiem inżynierskim lub innym kierunkiem narracji.
+
 
 

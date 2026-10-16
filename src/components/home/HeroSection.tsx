@@ -32,14 +32,23 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="pt-2">
-            <a href="#contact" className="inline-block cursor-pointer">
+          <div className="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#experience" className="inline-block cursor-pointer">
               <Button
                 variant="accent"
                 size="lg"
                 className="text-white font-medium shadow-xs"
               >
-                {t("cta")}
+                {t("experienceCta")}
+              </Button>
+            </a>
+            <a href="#contact" className="inline-block cursor-pointer">
+              <Button
+                variant="outline"
+                size="lg"
+                className="font-medium"
+              >
+                {t("contactCta")}
               </Button>
             </a>
           </div>

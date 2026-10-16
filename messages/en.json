@@ -11,7 +11,8 @@
     "name": "Łukasz Kostyk",
     "role": "Fullstack developer",
     "location": "Gdynia, Poland",
-    "cta": "Get in touch"
+    "experienceCta": "Experience & projects",
+    "contactCta": "Get in touch"
   },
   "Experience": {
     "title": "Experience",

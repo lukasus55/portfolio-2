@@ -72,7 +72,8 @@
       "successMessage": "Dziękuję za kontakt. Odpowiem na Twój e-mail najszybciej jak to możliwe.",
       "sendAnother": "Wyślij kolejną wiadomość",
       "errorTitle": "Błąd wysyłki",
-      "errorMessage": "Nie udało się przesłać wiadomości. Spróbuj ponownie lub napisz bezpośrednio na e-mail."
+      "errorMessage": "Nie udało się przesłać wiadomości. Spróbuj ponownie lub napisz bezpośrednio na e-mail.",
+      "privacyNote": "Wysyłając wiadomość, akceptujesz zasady przetwarzania danych opisane w <link>Polityce prywatności</link>."
     }
   },
   "Footer": {
@@ -90,7 +91,36 @@
     },
     "connectTitle": "Social & Kontakt",
     "rights": "Wszelkie prawa zastrzeżone",
+    "privacy": "Polityka prywatności",
     "backToTop": "Wróć na górę"
+  },
+  "Privacy": {
+    "backHome": "Wróć do strony głównej",
+    "title": "Polityka prywatności",
+    "lastUpdated": "Ostatnia aktualizacja: październik 2026",
+    "intro": "Poniższy dokument wyjaśnia, jakie dane są przetwarzane w trakcie korzystania z mojej strony internetowej, w jaki sposób działają narzędzia analityczne oraz jak dbam o prywatność osób odwiedzających ten serwis.",
+    "sections": {
+      "controller": {
+        "title": "1. Administrator danych",
+        "content": "Administratorem Twoich danych osobowych jest Łukasz Kostyk (kontakt: lukas.kostyk@gmail.com). W razie jakichkolwiek pytań dotyczących prywatności lub przetwarzania danych możesz skontaktować się ze mną bezpośrednio drogą mailową."
+      },
+      "hosting": {
+        "title": "2. Hosting i infrastruktura",
+        "content": "Strona jest hostowana na platformie Vercel (Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA). Serwery dostawcy przetwarzają standardowe zapytania sieciowe (nagłówki HTTP, techniczne logi serwerowe) wyłącznie w zakresie niezbędnym do bezpiecznego i stabilnego dostarczania zawartości serwisu."
+      },
+      "contact": {
+        "title": "3. Formularz kontaktowy",
+        "content": "Jeżeli zdecydujesz się przesłać wiadomość przez formularz kontaktowy, podane przez Ciebie dane (imię, adres e-mail oraz treść wiadomości) są przetwarzane wyłącznie w celu przeczytania wiadomości i udzielenia na nią odpowiedzi. Wiadomości są przesyłane bezpiecznie za pośrednictwem usługi transakcyjnej Resend (Resend Inc.). Dane te nie są wykorzystywane do celów marketingowych, nie są zapisywane w zewnętrznych bazach newsletterowych ani przekazywane podmiotom trzecim."
+      },
+      "analytics": {
+        "title": "4. Analityka i brak plików cookies (Cookieless)",
+        "content": "Serwis korzysta z narzędzi Vercel Web Analytics oraz Vercel Speed Insights. Narzędzia te zostały zaprojektowane z myślą o pełnej ochronie prywatności (Privacy by Design) i działają całkowicie bez użycia plików cookies (cookieless) oraz bez zapisywania identyfikatorów w pamięci przeglądarki (localStorage). Zbierane informacje są w pełni zagregowane i zanonimizowane (dotyczą m.in. liczby odsłon, rodzaju urządzenia czy wskaźników szybkości ładowania strony Core Web Vitals) i służą mi wyłącznie do optymalizacji działania serwisu."
+      },
+      "rights": {
+        "title": "5. Prawa użytkownika",
+        "content": "Przysługuje Ci prawo do wglądu w swoje dane przesłane przez formularz, żądania ich sprostowania, usunięcia lub ograniczenia przetwarzania. Aby skorzystać z tych uprawnień, napisz bezpośrednio na adres lukas.kostyk@gmail.com."
+      }
+    }
   },
   "CaseStudy": {
     "backToProjects": "Wróć do projektów",

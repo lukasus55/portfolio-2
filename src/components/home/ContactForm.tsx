@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
@@ -113,7 +114,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="pt-2">
+      <div className="pt-2 space-y-3">
         <Button
           type="submit"
           variant="accent"
@@ -123,6 +124,19 @@ export function ContactForm() {
         >
           {status === "submitting" ? t("form.submittingButton") : t("form.submitButton")}
         </Button>
+
+        <p className="text-xs text-neutral-500 leading-relaxed">
+          {t.rich("form.privacyNote", {
+            link: (chunks) => (
+              <Link
+                href="/privacy"
+                className="underline underline-offset-2 text-text hover:text-accent transition-colors cursor-pointer font-medium"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
+        </p>
       </div>
     </form>
   );

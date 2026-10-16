@@ -104,6 +104,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()}{" "}
             <span className="text-accent font-medium">Łukasz Kostyk</span>. {t("rights")}.
           </span>
+          <Link
+            href="/privacy"
+            className="hover:text-accent transition-colors duration-150 cursor-pointer"
+          >
+            {t("privacy")}
+          </Link>
         </div>
       </div>
     </footer>

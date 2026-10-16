@@ -72,7 +72,8 @@
       "successMessage": "Thank you for reaching out. I will get back to you as soon as possible.",
       "sendAnother": "Send another message",
       "errorTitle": "Sending failed",
-      "errorMessage": "Could not send the message. Please try again or reach out directly via email."
+      "errorMessage": "Could not send the message. Please try again or reach out directly via email.",
+      "privacyNote": "By sending a message, you agree to the data processing terms outlined in the <link>Privacy Policy</link>."
     }
   },
   "Footer": {
@@ -90,7 +91,36 @@
     },
     "connectTitle": "Social & Connect",
     "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
     "backToTop": "Back to top"
+  },
+  "Privacy": {
+    "backHome": "Back to homepage",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: October 2026",
+    "intro": "This document outlines how information is processed when you visit my website, how analytics work, and how your privacy is protected.",
+    "sections": {
+      "controller": {
+        "title": "1. Data Controller",
+        "content": "The data controller of this website is Łukasz Kostyk (contact: lukas.kostyk@gmail.com). If you have any questions regarding privacy or data handling, you can reach out directly via email."
+      },
+      "hosting": {
+        "title": "2. Hosting and Infrastructure",
+        "content": "This website is hosted on Vercel (Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA). The infrastructure processes incoming HTTP requests and technical server logs strictly as necessary to deliver the application securely and reliably."
+      },
+      "contact": {
+        "title": "3. Contact Form",
+        "content": "If you choose to submit a message via the contact form, the details you provide (name, email address, message body) are processed solely to read and reply to your inquiry. Transmission is handled securely via the Resend API (Resend Inc.). This data is never used for marketing, never added to newsletter lists, and never shared with third parties."
+      },
+      "analytics": {
+        "title": "4. Cookieless Analytics and Performance",
+        "content": "This website uses Vercel Web Analytics and Vercel Speed Insights. These tools are built with a Privacy by Design approach: they do not use cookies and do not store tracking identifiers in browser storage (localStorage). Metrics collected are fully aggregated and anonymized (page view counts, device types, Core Web Vitals loading metrics) and serve only to diagnose technical performance and site stability."
+      },
+      "rights": {
+        "title": "5. Your Rights",
+        "content": "You have the right to access any personal information submitted via the contact form, request its correction, deletion, or restriction of processing. To exercise these rights, please contact me directly at lukas.kostyk@gmail.com."
+      }
+    }
   },
   "CaseStudy": {
     "backToProjects": "Back to projects",

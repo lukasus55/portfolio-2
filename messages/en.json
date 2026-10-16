@@ -26,7 +26,7 @@
       "role2": {
         "title": "Intern - Fullstack Developer",
         "type": "Full-time",
-        "period": "Jun 2026 - Sep 2026"
+        "period": "Jun 2026 - Oct 2026"
       }
     }
   },
@@ -36,11 +36,11 @@
     "items": [
       {
         "name": "Karwinska Olimpiada",
-        "description": "Comprehensive tournament management platform: match schedules, live rankings, community polls, and personalized fixtures."
+        "description": "Tournament management system for our annual games and game nights: bracket generation, availability polls, and personalized schedules."
       },
       {
         "name": "LOLES",
-        "description": "Performance analytics assistant for League of Legends players: matchup intelligence, match history, statistics, and tactical notes."
+        "description": "Matchup analysis and tactical notebook app for League of Legends. Built to prepare for lane matchups during the short game loading screen."
       }
     ]
   },
@@ -110,76 +110,72 @@
     "nextProject": "Next Project",
     "viewNext": "Explore case study",
     "kkol": {
-      "tagline": "Tournament platform and year-round community event hub — from the annual olympiad to tiered board game gatherings.",
+      "tagline": "Tournament management system and event hub for our community - from the annual games to tiered board game nights.",
       "role": "Lead Fullstack Developer",
       "timeline": "6 months (ongoing development)",
-      "overviewStory": "While Karwińska Olimpiada originated around a flagship annual multi-sport competition, community activity naturally expanded into year-round gatherings — ranging from tactical board game nights to seasonal mini-tournaments. All activities were organized into an event tier system reflecting their competitive scale, scoring, and format. Previously, coordinating dates, sign-ups, and standings across tangled spreadsheets and chat apps resulted in constant scheduling friction.",
-      "overviewGoal": "Architect a unified digital hub that categorizes activities by tiers (flagship olympiad, companion tournaments, casual board game sessions), automates conflict-free scheduling, broadcasts live match brackets, and provides athletes with personalized mobile schedules.",
+      "overviewStory": "Karwińska Olimpiada started as an annual competition among friends, but quickly grew into year-round mini-tournaments and regular board game nights. For years, we tracked everything across spreadsheets and group chats. Eventually, the manual coordination broke down - match dates got lost, historical scores were scattered, and coordinating schedules for over a dozen people with completely conflicting availability became exhausting. I categorized our events into tiers (from the main games to casual meetups) and decided to build a dedicated system to handle it all.",
+      "overviewGoal": "I wanted to build a single web tool that eliminated manual bracket generation and scheduling headaches. When a player logs in, they should see only their own upcoming matches instead of wading through a massive schedule. I also needed automated availability polls before each event and instant score updates without lag.",
       "features": {
         "schedule": {
-          "title": "Personalized athlete agenda",
-          "desc": "Authenticated participants see only their upcoming matches and events with exact start times, court allocations, and instant delay notifications."
+          "title": "Personalized match schedule",
+          "desc": "Instead of forcing players to dig through a spreadsheet, I filtered the agenda based on the authenticated user. Players see only their own matches, assigned courts or boards, and instant delay notifications."
         },
         "tournaments": {
-          "title": "Interactive tournament brackets",
-          "desc": "Live round-robin and knockout brackets. Match scores entered by referees instantly recalculate standings, point differentials, and qualification paths."
-        },
-        "ranking": {
-          "title": "Real-time overall leaderboard",
-          "desc": "An aggregated points table dynamically computing multisport standings across all disciplines, keeping players informed without waiting for end-of-day recaps."
+          "title": "Brackets and group standings",
+          "desc": "I built a generator for knockout brackets and round-robin groups. Referees submit match scores directly from their phones, and the system recalculates standings, point differentials, and next-round matchups on the fly."
         },
         "poll": {
-          "title": "Community polls & MVP voting",
-          "desc": "An interactive voting module allowing athletes to elect tournament MVPs, vote on standout plays, and provide feedback on event organization."
+          "title": "Community polls and voting",
+          "desc": "A polling module primarily used to vote on games and disciplines for upcoming tournament editions. Beyond deciding on the event lineup, players could also elect MVPs or review individual competitions, while organizers configured which poll fields participants were allowed to edit."
         }
       },
       "subApps": {
         "dartes": {
-          "desc": "Dedicated live darts scoreboard companion app (dart.kkol.pl), engineered and used during Season 2026 of Karwińska Olimpiada. It forms an integral part of the ecosystem, handling automatic leg scoring, checkout calculations, and feeding live results into tournament leaderboards."
+          "desc": "A darts scoreboard app (dart.kkol.pl) that I built and deployed for Season 2026 of Karwińska Olimpiada. It tracks legs, suggests checkout paths, and syncs the final match score straight into the main tournament bracket on kkol.pl."
         },
         "bot": {
-          "desc": "Dedicated Discord bot integrated directly with the kkol.pl calendar. It automatically generates interactive availability polls for upcoming community events (such as board game meetups) and broadcasts weekly trivia and historical stats configured by administrators on the platform."
+          "desc": "A Discord bot connecting our server with kkol.pl. It polls the calendar via a secured REST API endpoint, posts interactive date-selection polls for game nights, and publishes weekly trivia and stats that I configure in the web dashboard."
         }
       },
       "challenges": {
         "permissions": {
-          "title": "Hierarchical & Contextual Multi-Level RBAC",
-          "desc": "The platform required a nuanced access control architecture spanning global tiers (Admin, Organizer, Player), tournament-level delegations, and fine-grained sub-module permissions (such as community polls and fixture scheduling). Organizers can assign tournament co-management and scoring rights to designated participants. Furthermore, within specific modules like polls, organizers independently configure participant capabilities (e.g., allowing players to submit questions while restricting tag and label editing), while administrators maintain a global, universal override across all events. Engineering this required a flexible, performant authorization matrix and middleware capable of validating context-aware permissions without repetitive logic or database bottlenecks."
+          "title": "Multi-tier permissions and delegated roles",
+          "desc": "My biggest challenge was structuring access control so I didn't have to manually record every score myself. I defined three main roles: Admin, Organizer, and Player. An event organizer can delegate match editing rights to another participant (like a court referee) without granting deletion rights for the event. Inside community polls, organizers set granular rules - players can add questions, but cannot modify categories or tags. To avoid locking myself out, I built a universal admin bypass that allows full access across all events regardless of assignments."
         },
         "ecosystem": {
-          "title": "Cross-Service Ecosystem & Unified Authentication",
-          "desc": "KKOL evolved beyond a standalone platform into an ecosystem linking kkol.pl, the dart.kkol.pl companion app, and a Discord automation bot. The challenge centered on implementing unified identity and SSO across satellite subdomains via KKOL accounts, alongside reliable inter-service synchronization. The Discord bot securely communicates with the KKOL backend: reading scheduled calendar events, dispatching interactive date-selection polls to server channels, and recording dispatched weekly trivia directly in the database, ensuring transactional integrity and real-time state parity across distinct services."
+          "title": "Unified authentication and Discord bot integration",
+          "desc": "Instead of keeping everything in a bloated monolith, I separated darts onto dart.kkol.pl and offloaded notifications to a Discord bot. I implemented unified authentication (SSO) so players use their single kkol.pl account across companion apps. The Discord bot talks to the kkol.pl backend via secured REST endpoints with an API key: checking upcoming fixtures, publishing polls, and marking sent trivia records in the database to prevent duplicate messages."
         }
       }
     },
     "loles": {
-      "tagline": "Matchup intelligence and tactical notes assistant for League of Legends players.",
-      "role": "Creator & Fullstack Engineer",
-      "timeline": "3 weeks (focused sprint)",
-      "overviewStory": "In League of Legends, victory often hinges on precise knowledge of lane matchups and opponent cooldowns. Existing analytical hubs overwhelm players with raw winrate tables without offering personal tactical note-taking.",
-      "overviewGoal": "Build a lightweight, zero-latency tool enabling players during the loading screen to swiftly inspect matchup cooldowns, consult matchup history, and record tactical takeaways for future encounters.",
+      "tagline": "Lane matchup analysis and tactical notebook for League of Legends, built for quick lookups during the match loading screen.",
+      "role": "Creator & Fullstack Developer",
+      "timeline": "3 weeks",
+      "overviewStory": "In League of Legends, lane outcomes often come down to details: knowing enemy ability cooldowns or specific matchup habits. Mainstream stat sites dump global win rate averages across thousands of games, but leave no room for personal notes or reviewing past mistakes. Sitting down to play, I needed something I could glance at during the 60-second loading screen to quickly recall how to play against a specific opponent and what went wrong last time.",
+      "overviewGoal": "I built LOLES as a dedicated web app backed by PostgreSQL on my own server. My goal was to create a tool that loads within a fraction of a second, automatically ingests my match history from the Riot Games API, and surfaces tactical notes before the match starts.",
       "features": {
         "matchup": {
-          "title": "Matchup intelligence hub",
-          "desc": "Instant overview of matchup dynamics, power spikes, key opponent ability cooldowns, and lane phase battle strategies."
+          "title": "Lane matchup cheatsheet",
+          "desc": "Quick breakdown of enemy abilities, key cooldowns, and early lane gameplans. I designed this view to refresh critical threats in seconds before the match begins."
         },
         "notes": {
-          "title": "Tactical personal notebook",
-          "desc": "Save custom notes against specific champions and matchups that automatically resurface whenever you face that matchup again."
+          "title": "Personal tactical notes",
+          "desc": "Custom notes attached to specific champions and lane pairings. Whenever I run into the same matchup again, my past observations and takeaways from wins or losses surface automatically."
         },
         "stats": {
-          "title": "Filtered performance analytics",
-          "desc": "Clean breakdown of personal matchup win rates and stats to systematically spot recurring mistakes and measure mechanical improvement."
+          "title": "Filtered history and head-to-head records",
+          "desc": "Detailed breakdown of my own games filtered by role and champion. Lets me inspect my actual win rate against a specific opponent rather than relying on guesswork."
         }
       },
       "challenges": {
-        "performance": {
-          "title": "Sub-100ms Loading Speed & Bundle Optimization (Zero Latency)",
-          "desc": "League of Legends loading screens frequently last under a minute. The application had to achieve immediate interactivity, eliminating bulky third-party dependencies and blocking roundtrips. Through precise tree-shaking and aggressive in-memory caching of static champion assets, interactive lookup times for crucial ability cooldowns remain under 100ms from tab launch."
+        "ingestion": {
+          "title": "Ingesting Riot API match history and data normalization",
+          "desc": "The official Riot Games API has clear limitations: it only returns shallow history for the last few dozen matches and glosses over edge cases. I built a synchronization pipeline that persists games into a PostgreSQL database on my server, preserving an archive of hundreds of matches. During data ingestion, I had to handle edge cases manually. For instance, the Riot API marks remakes simply as wins or losses. I wrote custom detection logic: if a match finishes under 3 minutes, the system classifies it as a remake, excluding it from win rates and average stat calculations."
         },
-        "offline": {
-          "title": "Serverless Client-Side Persistence & Note Synchronization",
-          "desc": "Engineered a fully autonomous client storage engine using IndexedDB and LocalStorage, securely retaining hundreds of tactical matchup notes right inside the player's browser. This guarantees user privacy with zero cloud infrastructure overhead, while native JSON import/export mechanisms enable seamless data backups and cross-device migration."
+        "filtering": {
+          "title": "Multi-dimensional matchup and notes filtering",
+          "desc": "With over 160 champions in League of Legends, bottom lane matchups are dynamic 2v2 battles where both the carry (ADC) and the support dictate the lane. Simple champion-to-champion filtering was useless. I structured database queries and UI filters to support combinations of role, selected champion, and opposing duos. This allows me to pull up notes and stats for exact lane configurations (such as playing a specific ADC paired with a specific support against an opposing duo)."
         }
       }
     }

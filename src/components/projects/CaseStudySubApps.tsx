@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import type { CaseStudySubApp } from "./caseStudyData";
 
 interface CaseStudySubAppsProps {
@@ -25,14 +24,9 @@ export function CaseStudySubApps({ subApps }: CaseStudySubAppsProps) {
           <article key={app.id} className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div className="space-y-2 max-w-2xl">
-                <div className="flex items-center gap-3">
-                  <h3 className="font-header text-2xl sm:text-3xl font-medium tracking-tight text-text">
-                    {app.name}
-                  </h3>
-                  <Badge variant="outline" size="sm">
-                    {app.subdomain}
-                  </Badge>
-                </div>
+                <h3 className="font-header text-2xl sm:text-3xl font-medium tracking-tight text-text">
+                  {app.name}
+                </h3>
                 <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
                   {t(app.descKey)}
                 </p>

@@ -87,7 +87,7 @@ export async function sendContactMessage(
             <p style="margin: 0; font-size: 15px; white-space: pre-wrap; line-height: 1.6;">${escapeHtml(trimmedMessage)}</p>
           </div>
           <p style="margin-top: 24px; font-size: 13px; color: #6b7280;">
-            Możesz odpowiedzieć bezpośrednio na tego maila — odpowiedź trafi na adres nadawcy (${escapeHtml(trimmedEmail)}).
+            Możesz odpowiedzieć bezpośrednio na tego maila - odpowiedź trafi na adres nadawcy (${escapeHtml(trimmedEmail)}).
           </p>
         </div>
       `,

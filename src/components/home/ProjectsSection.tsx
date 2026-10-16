@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ProjectVideo } from "@/components/ui/ProjectVideo";
+import { caseStudies } from "@/components/projects/caseStudyData";
 
 interface ProjectData {
   id: string;
@@ -19,17 +20,17 @@ const projectsData: ProjectData[] = [
     id: "kkol",
     nameKey: "items.0.name",
     descKey: "items.0.description",
-    video: "/video_placeholder.mp4",
-    poster: "/projects/kkol/home.png",
-    logo: "/projects/kkol/logo.svg",
+    video: caseStudies.kkol.heroVideo ?? "/projects/kkol/preview.mp4",
+    poster: caseStudies.kkol.heroPoster,
+    logo: caseStudies.kkol.logo ?? "/projects/kkol/logo.svg",
   },
   {
     id: "loles",
     nameKey: "items.1.name",
     descKey: "items.1.description",
-    video: "/projects/loles/preview.mp4",
-    poster: "/projects/loles/home.png",
-    logo: "/projects/loles/logo.svg",
+    video: caseStudies.loles.heroVideo ?? "/projects/loles/preview.mp4",
+    poster: caseStudies.loles.heroPoster,
+    logo: caseStudies.loles.logo ?? "/projects/loles/logo.svg",
   },
 ];
 

@@ -50,8 +50,8 @@
   },
   "About": {
     "title": "O mnie",
-    "paragraph1": "TODO",
-    "paragraph2": "TODO"
+    "paragraph1": "W programowaniu skupiam się na tworzeniu narzędzi, które rozwiązują realne problemy i po prostu ułatwiają ludziom życie. Zależy mi na tym, by moje aplikacje były funkcjonalne, szybkie i intuicyjne - bez zbędnych bajerów, które tylko komplikują obsługę. Lubię mieć wpływ na cały proces, od architektury backendu po czytelny interfejs.",
+    "paragraph2": "W wolnym czasie najchętniej gram w darta albo śledzę wyścigi Formuły 1. Cenię w nich rywalizację opartą na strategii i precyzji, gdzie o końcowym wyniku decydują ułamki sekund lub pojedyncze milimetry."
   },
   "Contact": {
     "title": "Kontakt",

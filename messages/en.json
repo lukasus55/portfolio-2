@@ -50,8 +50,8 @@
   },
   "About": {
     "title": "About Me",
-    "paragraph1": "TODO",
-    "paragraph2": "TODO"
+    "paragraph1": "In software development, I focus on building tools that solve real problems and simply make people's lives easier. I care about making my applications functional, fast, and intuitive - without unnecessary gimmicks that only get in the way. I like having ownership of the entire process, from backend architecture to a clean user interface.",
+    "paragraph2": "Outside of work, you'll most often find me playing darts or following Formula 1 races. I appreciate the focus on strategy and precision in both, where split seconds and millimeters determine the final outcome."
   },
   "Contact": {
     "title": "Contact",

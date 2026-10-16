@@ -28,9 +28,9 @@ export default function AboutSection() {
           {/* Zdjęcie profilowe - wyłania się z lewej strony (slide-left) */}
           <div className="md:col-span-4 w-full max-w-sm">
             <ScrollReveal variant="slide-left" duration={500}>
-              <div className="relative aspect-4/5 w-full rounded-sm overflow-hidden bg-white/10 border border-white/20">
+              <div className="relative aspect-4/5 w-full rounded-sm overflow-hidden [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)]">
                 <Image
-                  src="/image_placeholder.jpg"
+                  src="/about_me_portrait.png"
                   alt="Łukasz Kostyk - portret"
                   fill
                   sizes="(max-width: 768px) 100vw, 320px"

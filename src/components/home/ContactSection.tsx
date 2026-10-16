@@ -1,20 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { ContactForm } from "./ContactForm";
 
 export default function ContactSection() {
   const t = useTranslations("Contact");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <section
@@ -27,7 +18,7 @@ export default function ContactSection() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 max-w-4xl">
-          {/* Dane kontaktowe po lewej - wejście slide-left */}
+          {/* Dane kontaktowe po lewej */}
           <div className="md:col-span-5">
             <ScrollReveal variant="slide-left" duration={450}>
               <div className="space-y-6">
@@ -37,7 +28,7 @@ export default function ContactSection() {
 
                 <div className="space-y-4 pt-2">
                   <div>
-                    <span className="block text-xs font-mono uppercase text-text/50">
+                    <span className="block text-xs font-mono text-text/50">
                       {t("emailLabel")}
                     </span>
                     <a
@@ -49,7 +40,7 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <span className="block text-xs font-mono uppercase text-text/50">
+                    <span className="block text-xs font-mono text-text/50">
                       {t("locationLabel")}
                     </span>
                     <span className="text-base font-normal text-text">
@@ -61,76 +52,10 @@ export default function ContactSection() {
             </ScrollReveal>
           </div>
 
-          {/* Formularz kontaktowy po prawej - wejście zoom-in */}
+          {/* Formularz kontaktowy po prawej */}
           <div className="md:col-span-7">
             <ScrollReveal variant="zoom-in" delay={100} duration={500}>
-              {submitted ? (
-                <div className="p-8 bg-background rounded-sm border border-text/10 space-y-2">
-                  <h3 className="text-xl font-medium font-header text-text">
-                    Dziękuję za wiadomość!
-                  </h3>
-                  <p className="text-sm text-neutral-600">
-                    Odpowiem na Twój e-mail najszybciej jak to możliwe.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-1.5">
-                    <label
-                      htmlFor="contact-name"
-                      className="block text-xs font-medium text-text/80"
-                    >
-                      {t("form.nameLabel")}
-                    </label>
-                    <Input
-                      id="contact-name"
-                      required
-                      placeholder={t("form.namePlaceholder")}
-                    />
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label
-                      htmlFor="contact-email"
-                      className="block text-xs font-medium text-text/80"
-                    >
-                      {t("form.emailLabel")}
-                    </label>
-                    <Input
-                      id="contact-email"
-                      type="email"
-                      required
-                      placeholder={t("form.emailPlaceholder")}
-                    />
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label
-                      htmlFor="contact-message"
-                      className="block text-xs font-medium text-text/80"
-                    >
-                      {t("form.messageLabel")}
-                    </label>
-                    <Textarea
-                      id="contact-message"
-                      required
-                      rows={4}
-                      placeholder={t("form.messagePlaceholder")}
-                    />
-                  </div>
-
-                  <div className="pt-2">
-                    <Button
-                      type="submit"
-                      variant="accent"
-                      size="md"
-                      className="w-full sm:w-auto font-medium"
-                    >
-                      {t("form.submitButton")}
-                    </Button>
-                  </div>
-                </form>
-              )}
+              <ContactForm />
             </ScrollReveal>
           </div>
         </div>
@@ -138,4 +63,3 @@ export default function ContactSection() {
     </section>
   );
 }
-

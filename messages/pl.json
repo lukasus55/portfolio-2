@@ -65,7 +65,13 @@
       "emailPlaceholder": "jan@example.com",
       "messageLabel": "Wiadomość",
       "messagePlaceholder": "Opisz krótko swój projekt lub pytanie...",
-      "submitButton": "Wyślij wiadomość"
+      "submitButton": "Wyślij wiadomość",
+      "submittingButton": "Wysyłanie...",
+      "successTitle": "Wiadomość została wysłana!",
+      "successMessage": "Dziękuję za kontakt. Odpowiem na Twój e-mail najszybciej jak to możliwe.",
+      "sendAnother": "Wyślij kolejną wiadomość",
+      "errorTitle": "Błąd wysyłki",
+      "errorMessage": "Nie udało się przesłać wiadomości. Spróbuj ponownie lub napisz bezpośrednio na e-mail."
     }
   },
   "Footer": {
@@ -80,13 +86,6 @@
       "skills": "Umiejętności & Stack",
       "about": "O mnie",
       "contact": "Kontakt"
-    },
-    "expertiseTitle": "Specjalizacja",
-    "expertise": {
-      "item1": "Architektura Next.js & React",
-      "item2": "Rozwiązania Fullstack TypeScript",
-      "item3": "Optymalizacja Core Web Vitals",
-      "item4": "Design Systemy & Świadomy UX"
     },
     "connectTitle": "Social & Kontakt",
     "rights": "Wszelkie prawa zastrzeżone",

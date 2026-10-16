@@ -65,7 +65,13 @@
       "emailPlaceholder": "john@example.com",
       "messageLabel": "Message",
       "messagePlaceholder": "Tell me about your project or inquiry...",
-      "submitButton": "Send message"
+      "submitButton": "Send message",
+      "submittingButton": "Sending...",
+      "successTitle": "Message sent!",
+      "successMessage": "Thank you for reaching out. I will get back to you as soon as possible.",
+      "sendAnother": "Send another message",
+      "errorTitle": "Sending failed",
+      "errorMessage": "Could not send the message. Please try again or reach out directly via email."
     }
   },
   "Footer": {
@@ -80,13 +86,6 @@
       "skills": "Skills & Stack",
       "about": "About me",
       "contact": "Contact"
-    },
-    "expertiseTitle": "Expertise",
-    "expertise": {
-      "item1": "Next.js & React Architecture",
-      "item2": "Fullstack TypeScript Systems",
-      "item3": "Core Web Vitals Optimization",
-      "item4": "Design Systems & User Experience"
     },
     "connectTitle": "Social & Connect",
     "rights": "All rights reserved",

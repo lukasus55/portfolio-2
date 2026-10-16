@@ -13,7 +13,6 @@ export default function Footer() {
     { label: t("nav.about"), href: "/#about" },
     { label: t("nav.contact"), href: "/#contact" },
   ];
-  const expertiseItems = [t("expertise.item1"), t("expertise.item2"), t("expertise.item3"), t("expertise.item4")];
 
   return (
     <footer className="w-full bg-text text-background py-16 md:py-20 overflow-hidden">
@@ -21,7 +20,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-neutral-800">
           {/* Identity & Bio */}
-          <div className="lg:col-span-4 space-y-3">
+          <div className="lg:col-span-5 space-y-3">
             <span className="font-header text-xl md:text-2xl font-medium tracking-tight text-white block">
               Łukasz Kostyk
             </span>
@@ -37,8 +36,8 @@ export default function Footer() {
           </div>
 
           {/* Sitemap Navigation */}
-          <div className="lg:col-span-3 space-y-3">
-            <p className="font-header text-xs uppercase tracking-wider font-medium text-neutral-300">
+          <div className="lg:col-span-4 space-y-3">
+            <p className="font-header text-xs tracking-wider font-medium text-neutral-300">
               {t("navTitle")}
             </p>
             <ul className="space-y-2 text-sm text-neutral-400">
@@ -55,23 +54,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Expertise */}
-          <div className="lg:col-span-3 space-y-3">
-            <p className="font-header text-xs uppercase tracking-wider font-medium text-neutral-300">
-              {t("expertiseTitle")}
-            </p>
-            <ul className="space-y-2 text-sm text-neutral-400">
-              {expertiseItems.map((item, idx) => (
-                <li key={idx} className="leading-snug">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Connect */}
-          <div className="lg:col-span-2 space-y-3">
-            <p className="font-header text-xs uppercase tracking-wider font-medium text-neutral-300">
+          <div className="lg:col-span-3 space-y-3">
+            <p className="font-header text-xs tracking-wider font-medium text-neutral-300">
               {t("connectTitle")}
             </p>
             <ul className="space-y-2.5 text-sm text-neutral-400">

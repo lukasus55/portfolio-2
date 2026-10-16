@@ -33,16 +33,32 @@ export async function generateMetadata({
   if (!project) return {};
 
   const t = await getTranslations({ locale, namespace: "CaseStudy" });
-  const title = `${project.name} | Case Study | Łukasz Kostyk`;
+  const title = `${project.name} - Łukasz Kostyk`;
   const description = t(project.taglineKey);
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
+    keywords: [
+      project.name,
+      ...project.stack,
+      "Łukasz Kostyk",
+      "Case Study",
+      "Fullstack Developer",
+    ],
     openGraph: {
       title,
       description,
+      type: "article",
       images: [{ url: project.heroPoster }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [project.heroPoster],
     },
     alternates: {
       languages: {

@@ -22,10 +22,64 @@ const headerFont = Plus_Jakarta_Sans({
 
 
 
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Personal Portfolio",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isPl = locale === "pl";
+
+  const title = "Łukasz Kostyk";
+  const description = isPl
+    ? "Łukasz Kostyk - Fullstack Developer z Gdyni. Tworzę funkcjonalne i intuicyjne aplikacje webowe end-to-end."
+    : "Łukasz Kostyk - Fullstack Developer based in Gdynia, Poland. Building functional, intuitive web applications end-to-end.";
+
+  return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://lkostyk.com"),
+    title: {
+      default: title,
+      template: "%s - Łukasz Kostyk",
+    },
+    description,
+    keywords: [
+      "Łukasz Kostyk",
+      "Fullstack Developer",
+      "Software Engineer",
+      "Programista",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Portfolio",
+      "Gdynia",
+    ],
+    authors: [{ name: "Łukasz Kostyk" }],
+    creator: "Łukasz Kostyk",
+    icons: {
+      icon: "/favicon.png",
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: isPl ? "pl_PL" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      languages: {
+        pl: "/pl",
+        en: "/en",
+      },
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
